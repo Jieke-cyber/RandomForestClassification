@@ -1,10 +1,7 @@
-import time
-
-import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
-from DatasetLoader import DatasetLoader  # quella versione che abbiamo fatto
-from RandomForest import RandomForestClassifier  # la tua classe RF
+from DatasetLoader import DatasetLoader
+from RandomForestClassifier import RandomForestClassifier
 
 def evaluate_model(y_true, y_pred):
     acc = accuracy_score(y_true, y_pred)
@@ -35,7 +32,6 @@ def run_on_dataset(path, target_index):
     print(f"Confusion Matrix:\n{cm}")
 
 if __name__ == "__main__":
-    # Inserisci i path ai tuoi dataset e l'indice della colonna target (label)
     datasets = [
         ("datasets/wine/wine.data", 0),      # Wine: label è la prima colonna
         ("datasets/mushroom/agaricus-lepiota.data", 0),  # Mushroom: label è la prima colonna
